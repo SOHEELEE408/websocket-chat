@@ -10,8 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Getter
-@NoArgsConstructor
-@Entity
 @Setter
 public class ChatMessage {
     public enum MessageType{
@@ -19,11 +17,7 @@ public class ChatMessage {
     }
 
     private MessageType type;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String roodId;
-
     private String sender;
     private String message;
 }

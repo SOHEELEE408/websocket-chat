@@ -12,16 +12,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Getter
-@NoArgsConstructor
-@Entity
 public class ChatRoom {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String roomId;
-
     private String name;
-
-    @Transient
     private final Set<WebSocketSession> sessions = new HashSet<>();
 
     @Builder

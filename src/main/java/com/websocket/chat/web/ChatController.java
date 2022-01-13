@@ -19,8 +19,8 @@ public class ChatController {
         return chatService.createRoom(name);
     }
 
-    @GetMapping
-    public List<ChatRoom> findAllRoom(){
-        return chatService.findAllRooms();
-    }
+//    @GetMapping
+//    public List<ChatRoom> findAllRoom(){
+//        return chatService.findAllRooms();
+//    }
 }
