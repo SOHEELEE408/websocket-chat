@@ -4,10 +4,8 @@ import com.websocket.chat.domain.message.ChatMessage;
 import com.websocket.chat.service.ChatService;
 import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import org.springframework.web.socket.WebSocketSession;
 
-import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 

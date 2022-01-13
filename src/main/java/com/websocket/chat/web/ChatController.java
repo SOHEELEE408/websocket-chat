@@ -9,7 +9,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping
+@RequestMapping("chat")
 public class ChatController {
 
     private final ChatService chatService;
@@ -19,8 +19,8 @@ public class ChatController {
         return chatService.createRoom(name);
     }
 
-//    @GetMapping
-//    public List<ChatRoom> findAllRoom(){
-//        return chatService.findAllRooms();
-//    }
+    @GetMapping
+    public List<ChatRoom> findAllRooms(){
+        return chatService.findAllRooms();
+    }
 }

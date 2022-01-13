@@ -5,7 +5,6 @@ import com.websocket.chat.domain.room.ChatRoom;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
 
@@ -25,14 +24,13 @@ public class ChatService {
         chatRooms = new LinkedHashMap<>();
     }
 
-//    public List<ChatRoom> findAllRooms(){
-//        return chatRoomRepository.findAll();
-//    }
+    public List<ChatRoom> findAllRooms(){
+        return new ArrayList<>(chatRooms.values());
+    }
 
-//    public ChatRoom findRoomById(String roomId){
-//        ChatRoom room = chatRoomRepository.findById(roomId).orElseThrow(()->new IllegalArgumentException("해당 채팅방이 없습니다. id= "+roomId));
-//        return room;
-//    }
+    public ChatRoom findRoomById(String roomId){
+        return chatRooms.get(roomId);
+    }
 
     public ChatRoom createRoom(String name){
         String randomId = UUID.randomUUID().toString();
@@ -40,7 +38,7 @@ public class ChatService {
                 .roodId(randomId)
                 .name(name)
                 .build();
-        //
+        chatRooms.put(randomId, chatRoom);
         return chatRoom;
     }
 
