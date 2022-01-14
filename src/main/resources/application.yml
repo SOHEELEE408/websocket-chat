@@ -1,8 +1,8 @@
 spring:
   devtools:
     livereload:
-      enabled:true
+      enabled: true
     restart:
       enabled: false
   freemarker:
-    cache:false
+    cache: false
